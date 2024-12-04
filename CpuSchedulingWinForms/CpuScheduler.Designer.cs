@@ -39,6 +39,7 @@
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.tabSelection = new System.Windows.Forms.TabControl();
             this.dashBoardTab = new System.Windows.Forms.TabPage();
+            this.YetronTab = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabSelection.SuspendLayout();
             this.dashBoardTab.SuspendLayout();
+            this.YetronTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -181,6 +183,7 @@
             this.tabSelection.Controls.Add(this.dashBoardTab);
             this.tabSelection.Controls.Add(this.cpuSchedulerTab);
             this.tabSelection.Controls.Add(this.productTab);
+            this.tabSelection.Controls.Add(this.YetronTab);
             this.tabSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSelection.Location = new System.Drawing.Point(171, 1);
             this.tabSelection.Name = "tabSelection";
@@ -208,6 +211,26 @@
             this.dashBoardTab.Size = new System.Drawing.Size(501, 413);
             this.dashBoardTab.TabIndex = 0;
             this.dashBoardTab.Text = "Dashboard";
+            // 
+            // YetronTab
+            // 
+            this.YetronTab.BackColor = System.Drawing.SystemColors.Highlight;
+            // this.YetronTab.Controls.Add(this.listView1);
+            // this.YetronTab.Controls.Add(this.progressBar2);
+            // this.YetronTab.Controls.Add(this.label3);
+            // this.YetronTab.Controls.Add(this.progressBar1);
+            // this.YetronTab.Controls.Add(this.label2);
+            // this.YetronTab.Controls.Add(this.btnExit);
+            // this.YetronTab.Controls.Add(this.pictureBox3);
+            // this.YetronTab.Controls.Add(this.pictureBox4);
+            // this.YetronTab.Controls.Add(this.pictureBox2);
+            this.YetronTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YetronTab.Location = new System.Drawing.Point(4, 22);
+            this.YetronTab.Name = "dashBoardTab";
+            this.YetronTab.Padding = new System.Windows.Forms.Padding(3);
+            this.YetronTab.Size = new System.Drawing.Size(501, 413);
+            this.YetronTab.TabIndex = 0;
+            this.YetronTab.Text = "YetronTab";
             // 
             // listView1
             // 
@@ -560,6 +583,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabSelection;
         private System.Windows.Forms.TabPage dashBoardTab;
+        private System.Windows.Forms.TabPage YetronTab;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage cpuSchedulerTab;
