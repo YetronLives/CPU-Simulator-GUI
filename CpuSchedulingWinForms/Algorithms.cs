@@ -290,124 +290,7 @@ namespace CpuSchedulingWinForms
             }
         }
 
-        // public static void roundRobinAlgorithm(string userInput)
-        // {
-        //     int np = Convert.ToInt16(userInput);
-        //     int i, counter = 0;
-        //     double total = 0.0;
-        //     double timeQuantum;
-        //     double waitTime = 0, turnaroundTime = 0;
-        //     double averageWaitTime, averageTurnaroundTime;
-        //     double[] arrivalTime = new double[10];
-        //     double[] burstTime = new double[10];
-        //     double[] temp = new double[10];
-        //     int x = np;
-        //
-        //     DialogResult result = MessageBox.Show("Round Robin Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-        //
-        //     if (result == DialogResult.Yes)
-        //     {
-        //         for (i = 0; i < np; i++)
-        //         {
-        //             string arrivalInput =
-        //                     Microsoft.VisualBasic.Interaction.InputBox("Enter arrival time: ",
-        //                                                        "Arrival time for P" + (i + 1),
-        //                                                        "",
-        //                                                        -1, -1);
-        //
-        //             arrivalTime[i] = Convert.ToInt64(arrivalInput);
-        //
-        //             string burstInput =
-        //                     Microsoft.VisualBasic.Interaction.InputBox("Enter burst time: ",
-        //                                                        "Burst time for P" + (i + 1),
-        //                                                        "",
-        //                                                        -1, -1);
-        //
-        //             burstTime[i] = Convert.ToInt64(burstInput);
-        //
-        //             temp[i] = burstTime[i];
-        //         }
-        //         string timeQuantumInput =
-        //                     Microsoft.VisualBasic.Interaction.InputBox("Enter time quantum: ", "Time Quantum",
-        //                                                        "",
-        //                                                        -1, -1);
-        //
-        //         timeQuantum = Convert.ToInt64(timeQuantumInput);
-        //         Helper.QuantumTime = timeQuantumInput;
-        //
-        //         for (total = 0, i = 0; x != 0;)
-        //         {
-        //             if (temp[i] <= timeQuantum && temp[i] > 0)
-        //             {
-        //                 total = total + temp[i];
-        //                 temp[i] = 0;
-        //                 counter = 1;
-        //             }
-        //             else if (temp[i] > 0)
-        //             {
-        //                 temp[i] = temp[i] - timeQuantum;
-        //                 total = total + timeQuantum;
-        //             }
-        //             if (temp[i] == 0 && counter == 1)
-        //             {
-        //                 x--;
-        //                 //printf("nProcess[%d]tt%dtt %dttt %d", i + 1, burst_time[i], total - arrival_time[i], total - arrival_time[i] - burst_time[i]);
-        //                 MessageBox.Show("Turnaround time for Process " + (i + 1) + " : " + (total - arrivalTime[i]), "Turnaround time for Process " + (i + 1), MessageBoxButtons.OK);
-        //                 MessageBox.Show("Wait time for Process " + (i + 1) + " : " + (total - arrivalTime[i] - burstTime[i]), "Wait time for Process " + (i + 1), MessageBoxButtons.OK);
-        //                 turnaroundTime = (turnaroundTime + total - arrivalTime[i]);
-        //                 waitTime = (waitTime + total - arrivalTime[i] - burstTime[i]);                        
-        //                 counter = 0;
-        //             }
-        //             if (i == np - 1)
-        //             {
-        //                 i = 0;
-        //             }
-        //             else if (arrivalTime[i + 1] <= total)
-        //             {
-        //                 i++;
-        //             }
-        //             else
-        //             {
-        //                 i = 0;
-        //             }
-        //         }
-        //         
-        //         averageWaitTime = Convert.ToDouble(waitTime  / np);
-        //         averageTurnaroundTime = Convert.ToDouble(turnaroundTime / np);
-        //         
-        //         DataGridView dgv = new DataGridView
-        //         {
-        //             Dock = DockStyle.Fill,
-        //             AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        //         };
-        //
-        //         dgv.Columns.Add("Process", "Process");
-        //         dgv.Columns.Add("Arrival Time", "Arrival Time");
-        //         dgv.Columns.Add("Burst Time", "Burst Time");
-        //         dgv.Columns.Add("Wait Time", "Wait Time");
-        //         dgv.Columns.Add("Completion Time", "Completion Time");
-        //         dgv.Columns.Add("Turnaround Time", "Turnaround Time");
-        //
-        //         for (int index = 0; index < np; index++)
-        //         {
-        //             dgv.Rows.Add("P" + (index + 1),arrivalTime[index], burstTime[index], (total - arrivalTime[index] - burstTime[index]), (total - arrivalTime[index]), ((total - arrivalTime[index])));
-        //         }
-        //         dgv.Rows.Add("", "", "", "", "", "");
-        //         dgv.Rows.Add("", "", "", "", "Avg. Waiting Time(s)", averageWaitTime);
-        //         dgv.Rows.Add("", "", "", "", "Avg. Turnaround Time(s)", averageTurnaroundTime);
-        //         Form resultsForm = new Form
-        //         {
-        //             Text = "Round Robin Scheduling Results",
-        //             Width = 700,
-        //             Height = 400
-        //         };
-        //         resultsForm.Controls.Add(dgv);
-        //         resultsForm.ShowDialog();
-        //         
-        //         //MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
-        //         //MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
-        //     }
-        // }
+        
         public static void roundRobinAlgorithm(string userInput)
 {
     int np = Convert.ToInt32(userInput);
@@ -423,7 +306,7 @@ namespace CpuSchedulingWinForms
     double[] waitingTimeArr = new double[np];
     double[] turnaroundTimeArr = new double[np];
     
-    int x = np; // Number of processes remaining
+    int x = np;
 
     DialogResult result = MessageBox.Show("Round Robin Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
@@ -437,13 +320,13 @@ namespace CpuSchedulingWinForms
             string burstInput = Microsoft.VisualBasic.Interaction.InputBox("Enter burst time: ", "Burst time for P" + (i + 1), "", -1, -1);
             burstTime[i] = Convert.ToDouble(burstInput);
 
-            remainingTime[i] = burstTime[i]; // Initialize remaining burst times
+            remainingTime[i] = burstTime[i];
         }
 
         string timeQuantumInput = Microsoft.VisualBasic.Interaction.InputBox("Enter time quantum: ", "Time Quantum", "", -1, -1);
         timeQuantum = Convert.ToDouble(timeQuantumInput);
 
-        for (total = 0, i = 0; x != 0;) // Process loop
+        for (total = 0, i = 0; x != 0;)
         {
             if (remainingTime[i] > 0 && arrivalTime[i] <= total)
             {
@@ -472,13 +355,12 @@ namespace CpuSchedulingWinForms
                 }
             }
 
-            i = (i + 1) % np; // Move to the next process
+            i = (i + 1) % np; 
         }
 
         averageWaitTime = waitTime / np;
         averageTurnaroundTime = turnaroundTime / np;
-
-        // Initialize DataGridView
+        
         DataGridView dgv = new DataGridView
         {
             Dock = DockStyle.Fill,
@@ -501,8 +383,6 @@ namespace CpuSchedulingWinForms
         dgv.Rows.Add("", "", "", "", "", "");
         dgv.Rows.Add("", "", "", "", "Avg. Waiting Time(s)", averageWaitTime.ToString("F2"));
         dgv.Rows.Add("", "", "", "", "Avg. Turnaround Time(s)", averageTurnaroundTime.ToString("F2"));
-
-        // Display the DataGridView in a form
         Form resultsForm = new Form
         {
             Text = "Round Robin Scheduling Results",
